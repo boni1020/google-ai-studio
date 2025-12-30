@@ -63,12 +63,12 @@ const App: React.FC = () => {
           </div>
         </div>
 
-        {/* Updated Back/Reset Button with Amber styling */}
+        {/* Updated Back/Reset Button with Purple styling */}
         {outputText && (
           <div className="flex justify-center pt-4 animate-in fade-in slide-in-from-bottom-4 duration-500">
             <button
               onClick={handleReset}
-              className="flex items-center gap-2 px-6 py-3 rounded-full bg-amber-900/30 border border-amber-700/50 text-amber-200 hover:text-white hover:bg-amber-800/50 transition-all duration-300 group"
+              className="flex items-center gap-2 px-6 py-3 rounded-full bg-purple-900/30 border border-purple-700/50 text-purple-200 hover:text-white hover:bg-purple-800/50 transition-all duration-300 group"
             >
               <svg className="w-4 h-4 transition-transform group-hover:-translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
@@ -78,7 +78,7 @@ const App: React.FC = () => {
           </div>
         )}
 
-        <footer className="mt-auto pt-12 pb-6 text-center text-amber-600/60 text-sm">
+        <footer className="mt-auto pt-12 pb-6 text-center text-purple-400/60 text-sm">
           <p>© 2024 Gemini Creative Text Studio. Powered by Gemini 3.</p>
         </footer>
       </div>
