@@ -28,9 +28,14 @@ const App: React.FC = () => {
     }
   }, [inputText, selectedStyle]);
 
+  const handleReset = () => {
+    setOutputText('');
+    setError(null);
+  };
+
   return (
     <div className="min-h-screen flex flex-col items-center p-4 md:p-8">
-      <div className="max-w-4xl w-full space-y-8">
+      <div className="max-w-4xl w-full space-y-8 flex flex-col">
         <Header />
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -44,7 +49,7 @@ const App: React.FC = () => {
               onStyleChange={setSelectedStyle}
             />
             {error && (
-              <div className="p-4 bg-red-900/30 border border-red-500/50 rounded-xl text-red-200 text-sm">
+              <div className="p-4 bg-red-900/30 border border-red-500/50 rounded-xl text-red-100 text-sm">
                 {error}
               </div>
             )}
@@ -58,7 +63,22 @@ const App: React.FC = () => {
           </div>
         </div>
 
-        <footer className="pt-12 pb-6 text-center text-slate-500 text-sm">
+        {/* Updated Back/Reset Button with Amber styling */}
+        {outputText && (
+          <div className="flex justify-center pt-4 animate-in fade-in slide-in-from-bottom-4 duration-500">
+            <button
+              onClick={handleReset}
+              className="flex items-center gap-2 px-6 py-3 rounded-full bg-amber-900/30 border border-amber-700/50 text-amber-200 hover:text-white hover:bg-amber-800/50 transition-all duration-300 group"
+            >
+              <svg className="w-4 h-4 transition-transform group-hover:-translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+              </svg>
+              <span>返回重新編輯</span>
+            </button>
+          </div>
+        )}
+
+        <footer className="mt-auto pt-12 pb-6 text-center text-amber-600/60 text-sm">
           <p>© 2024 Gemini Creative Text Studio. Powered by Gemini 3.</p>
         </footer>
       </div>
