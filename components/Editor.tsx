@@ -6,7 +6,6 @@ interface EditorProps {
   value: string;
   onChange: (val: string) => void;
   onEnhance: () => void;
-  onClear: () => void;
   isGenerating: boolean;
   selectedStyle: EnhancementStyle;
   onStyleChange: (style: EnhancementStyle) => void;
@@ -16,7 +15,6 @@ const Editor: React.FC<EditorProps> = ({
   value, 
   onChange, 
   onEnhance, 
-  onClear,
   isGenerating, 
   selectedStyle, 
   onStyleChange 
@@ -24,15 +22,7 @@ const Editor: React.FC<EditorProps> = ({
   return (
     <div className="glass p-6 rounded-3xl shadow-2xl space-y-6">
       <div className="space-y-2">
-        <div className="flex justify-between items-center ml-1">
-          <label className="text-sm font-medium text-amber-400/70 uppercase tracking-wider">輸入您的文字</label>
-          <button 
-            onClick={onClear}
-            className="text-xs text-amber-700 hover:text-amber-500 transition-colors uppercase tracking-widest font-semibold"
-          >
-            清空
-          </button>
-        </div>
+        <label className="text-sm font-medium text-amber-400/70 ml-1 uppercase tracking-wider">輸入您的文字</label>
         <textarea
           className="w-full h-32 bg-amber-950/40 border border-amber-900/50 rounded-2xl p-4 text-amber-50 focus:outline-none focus:ring-2 focus:ring-amber-500/50 transition-all resize-none placeholder-amber-900/50"
           placeholder="在這裡輸入一段文字..."

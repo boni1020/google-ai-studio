@@ -33,10 +33,6 @@ const App: React.FC = () => {
     setError(null);
   };
 
-  const handleClearInput = () => {
-    setInputText('');
-  };
-
   return (
     <div className="min-h-screen flex flex-col items-center p-4 md:p-8">
       <div className="max-w-4xl w-full space-y-8 flex flex-col">
@@ -48,7 +44,6 @@ const App: React.FC = () => {
               value={inputText} 
               onChange={setInputText} 
               onEnhance={handleEnhance}
-              onClear={handleClearInput}
               isGenerating={isGenerating}
               selectedStyle={selectedStyle}
               onStyleChange={setSelectedStyle}
